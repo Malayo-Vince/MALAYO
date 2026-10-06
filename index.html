@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Spots in the Philippines</title>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #111;
+    color: #fff;
+  }
+
+  /* Top bar */
+  header {
+    padding: 3rem 1.5rem 1.5rem;
+    text-align: center;
+    background: #111;
+  }
+  header h1 { margin: 0 0 .5rem; font-size: clamp(1.8rem, 5vw, 3rem); }
+  header p { margin: 0; opacity: .8; }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(17, 17, 17, .85);
+    backdrop-filter: blur(6px);
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: .8rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+  nav a { color: #fff; text-decoration: none; font-size: .95rem; }
+  nav a:hover { text-decoration: underline; }
+
+  #intro {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  /* Full-screen image sections */
+  article {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  /* Image sits behind the text */
+  article figure {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    z-index: 0;
+  }
+  article figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: zoom 20s ease-in-out infinite alternate;
+  }
+  @keyframes zoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.15); }
+  }
+
+  /* Text overlay */
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    padding: 1.5rem 1.8rem;
+    margin: 0 0 4rem clamp(1rem, 5vw, 4rem);
+    background: rgba(0, 0, 0, .45);
+    border-radius: 12px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .content.show { opacity: 1; transform: none; }
+  .content h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 4vw, 2.5rem); }
+  .content p { margin: 0; line-height: 1.6; font-size: 1.05rem; }
+
+  figcaption {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 2;
+    font-size: .8rem;
+    font-style: italic;
+    opacity: .85;
+    text-shadow: 0 1px 3px #000;
+  }
+
+  footer { text-align: center; padding: 2rem 1rem; opacity: .7; }
+
+  @media (prefers-reduced-motion: reduce) {
+    article figure img { animation: none; }
+    .content { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+<h1>Beautiful Spots in the Philippines</h1>
+<p>Discover four breathtaking destinations worth visiting.</p>
+</header>
+<nav>
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#dancalan">Dancalan Beach</a></li>
+<li><a href="#bulusan-volcano">Bulusan Volcano Park</a></li>
+<li><a href="#mayon">Mayon Volcano</a></li>
+<li><a href="#cagsawa">Cagsawa Ruins</a></li>
+</ul>
+</nav>
+<main>
+<section id="intro">
+<h2>Introduction</h2>
+<p>The Philippines is home to some of the most stunning natural
+wonders in Southeast Asia. From quiet beaches to towering
+volcanoes and historic ruins, here are four spots every
+traveler should see.</p>
+</section>
+
+<article id="dancalan">
+<figure>
+<img src="images/Dancalan Beach.jpeg" alt="Shoreline of Dancalan Beach in Bulusan, Sorsogon">
+<figcaption>Dancalan Beach in Bulusan, Sorsogon.</figcaption>
+</figure>
+<div class="content">
+<h2>Dancalan Beach, Bulusan, Sorsogon</h2>
+<p>Dancalan Beach is a quiet shoreline in the town of Bulusan in
+Sorsogon, at the southern tip of the Bicol Region. Its calm,
+laid-back setting makes it a good place for swimming, picnics,
+and relaxing away from the crowds.</p>
+</div>
+</article>
+
+<article id="bulusan-volcano">
+<figure>
+<img src="images/Bulusan Lake.jpg" alt="Forested slopes of Bulusan Volcano in Sorsogon">
+<figcaption>The forested slopes of Bulusan Volcano Natural Park.</figcaption>
+</figure>
+<div class="content">
+<h2>Bulusan Volcano Park, Sorsogon</h2>
+<p>Bulusan Volcano Natural Park protects one of the most active
+volcanoes in the Philippines, along with the surrounding forest
+and Bulusan Lake. It is a favorite for nature walks, bird watching,
+and enjoying fresh mountain air.</p>
+</div>
+</article>
+
+<article id="mayon">
+<figure>
+<img src="images/Mayon Volcano.jpg" alt="Perfectly cone-shaped Mayon Volcano against a clear sky">
+<figcaption>Mayon's near-perfect volcanic cone, as seen from Legazpi.</figcaption>
+</figure>
+<div class="content">
+<h2>Mayon Volcano</h2>
+<p>Located in Albay, Mayon is famous for its symmetrical cone shape,
+considered the most perfectly formed volcano in the world, and
+is a popular backdrop for photography and hiking.</p>
+</div>
+</article>
+
+<article id="cagsawa">
+<figure>
+<img src="images/Cagsawa Ruins.jpg" alt="Old church bell tower ruins with Mayon Volcano rising behind it">
+<figcaption>The Cagsawa bell tower, with Mayon Volcano in the background.</figcaption>
+</figure>
+<div class="content">
+<h2>Cagsawa Ruins, Albay</h2>
+<p>Cagsawa Ruins in Daraga, Albay, are the remains of a Franciscan
+church buried when Mayon erupted in 1814. Only the bell tower still
+stands, and it has become one of the most photographed landmarks in
+Bicol, framed by the volcano behind it.</p>
+</div>
+</article>
+</main>
+<footer>
+<p>Images and information gathered from personal research.</p>
+</footer>
+
+<script>
+  // Fade the text in when each section scrolls into view
+  var boxes = document.querySelectorAll(".content");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    boxes.forEach(function (b) { io.observe(b); });
+  } else {
+    boxes.forEach(function (b) { b.classList.add("show"); });
+  }
+</script>
+</body>
+</html>
